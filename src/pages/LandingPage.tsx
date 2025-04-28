@@ -1,0 +1,157 @@
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
+import { motion } from 'framer-motion';
+
+const Header = styled.header`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+`;
+
+const Title = styled.h1`
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin: 0;
+  background: linear-gradient(45deg, #fff, #a8a8ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+`;
+
+const NavButtons = styled.div`
+  display: flex;
+  gap: 1rem;
+`;
+
+const Button = styled(motion.button)`
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  font-family: 'Helvetica Neue LT Pro', sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+  }
+`;
+
+const SpaceBackground = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+`;
+
+const Star = styled(motion.div)`
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+`;
+
+const Content = styled.div`
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+`;
+
+const Subtitle = styled.h2`
+  font-family: 'Helvetica Neue LT Pro', sans-serif;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  color: rgba(255, 255, 255, 0.8);
+`;
+
+const LandingPage: React.FC = () => {
+  const navigate = useNavigate();
+
+  const createStars = () => {
+    const stars = [];
+    for (let i = 0; i < 100; i++) {
+      const size = Math.random() * 3;
+      const x = Math.random() * 100;
+      const y = Math.random() * 100;
+      const duration = Math.random() * 5 + 5;
+      
+      stars.push(
+        <Star
+          key={i}
+          style={{
+            width: `${size}px`,
+            height: `${size}px`,
+            left: `${x}%`,
+            top: `${y}%`,
+          }}
+          animate={{
+            opacity: [0.5, 1, 0.5],
+          }}
+          transition={{
+            duration: duration,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+      );
+    }
+    return stars;
+  };
+
+  return (
+    <>
+      <Header>
+        <Title>Cosmic Journey</Title>
+        <NavButtons>
+          <Button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => window.open('https://social.example.com', '_blank')}
+          >
+            Social
+          </Button>
+          <Button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => navigate('/world')}
+          >
+            World
+          </Button>
+        </NavButtons>
+      </Header>
+      
+      <SpaceBackground>
+        {createStars()}
+      </SpaceBackground>
+
+      <Content>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
+          <Title style={{ fontSize: '4rem' }}>Welcome to the Cosmos</Title>
+          <Subtitle>Explore the infinite possibilities of your digital universe</Subtitle>
+        </motion.div>
+      </Content>
+    </>
+  );
+};
+
+export default LandingPage; 
