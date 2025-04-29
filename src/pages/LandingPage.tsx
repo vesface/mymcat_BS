@@ -1,7 +1,14 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import { motion } from 'framer-motion';
+
+const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: 'Nebula';
+    src: url('/fonts/Nebula-Regular.otf') format('opentype');
+  }
+`;
 
 const Header = styled.header`
   display: flex;
@@ -99,10 +106,19 @@ const TopText = styled.div`
 `;
 
 const MiddleText = styled.div`
-  font-family: 'Helvetica Neue LT Pro', sans-serif;
+  font-family: 'Nebula', sans-serif;
   font-size: 150px;
   color: white;
   text-align: center;
+  letter-spacing: normal;
+  
+  span {
+    display: inline-block;
+  }
+  
+  span:nth-child(3) {
+    margin-left: -0.3em; /* Adjusts the kerning between P and A */
+  }
 `;
 
 const BottomText = styled.div`
@@ -179,7 +195,13 @@ const LandingPage: React.FC = () => {
         />
         <TextBox>
           <TopText>Giving you the</TopText>
-          <MiddleText>SPACE</MiddleText>
+          <MiddleText>
+            <span>S</span>
+            <span>P</span>
+            <span>A</span>
+            <span>C</span>
+            <span>E</span>
+          </MiddleText>
           <BottomText>you need</BottomText>
         </TextBox>
       </Content>
