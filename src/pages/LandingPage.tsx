@@ -30,38 +30,22 @@ const NavButtons = styled.div`
 `;
 
 const Button = styled(motion.button)`
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   color: white;
+  padding: 35px 1.5rem;
   border-radius: 25px;
-  font-family: "Helvetica Neue LT Pro", sans-serif;
-  font-size: 18px;
+  font-family: 'Helvetica Neue LT Pro', sans-serif;
+  font-size: 24px;
   cursor: none;
   backdrop-filter: blur(5px);
-  transition: 0.3s;
-  border: 1px solid white;
-  padding: 10px 50px;
-  background:#080010;
+  transition: all 0.3s ease;
 
   &:hover {
     background: rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
   }
-`;
-
-const SpaceBackground = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  overflow: hidden;
-`;
-
-const Star = styled(motion.div)`
-  position: absolute;
-  background: white;
-  border-radius: 50%;
 `;
 
 const Content = styled.div`
@@ -115,37 +99,6 @@ const BottomText = styled.div`
 const LandingPage: React.FC = () => {
   const navigate = useNavigate();
 
-  const createStars = () => {
-    const stars = [];
-    for (let i = 0; i < 100; i++) {
-      const size = Math.random() * 3;
-      const x = Math.random() * 100;
-      const y = Math.random() * 100;
-      const duration = Math.random() * 5 + 5;
-      
-      stars.push(
-        <Star
-          key={i}
-          style={{
-            width: `${size}px`,
-            height: `${size}px`,
-            left: `${x}%`,
-            top: `${y}%`,
-          }}
-          animate={{
-            opacity: [0.5, 1, 0.5],
-          }}
-          transition={{
-            duration: duration,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-      );
-    }
-    return stars;
-  };
-
   return (
     <>
       <Header>
@@ -167,10 +120,6 @@ const LandingPage: React.FC = () => {
           </Button>
         </NavButtons>
       </Header>
-      
-      <SpaceBackground>
-        {createStars()}
-      </SpaceBackground>
 
       <Content>
         <WelcomeImage 
