@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled, { createGlobalStyle } from 'styled-components';
 import { motion } from 'framer-motion';
@@ -6,9 +6,11 @@ import { motion } from 'framer-motion';
 const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'Nebula';
-    src: url('/fonts/Nebula-Regular.otf') format('opentype');
+    src: local('Nebula'),
+         url('/fonts/Nebula-Regular.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
   }
 `;
 
@@ -201,6 +203,12 @@ const createStars = () => {
 
 const LandingPage: React.FC = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    document.fonts.ready.then(() => {
+      console.log('Fonts loaded:', document.fonts.check('12px Nebula'));
+    });
+  }, []);
 
   return (
     <>
