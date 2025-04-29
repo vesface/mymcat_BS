@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled, { createGlobalStyle } from 'styled-components';
 import { motion } from 'framer-motion';
@@ -69,6 +69,7 @@ const Star = styled(motion.div)`
   position: absolute;
   background: white;
   border-radius: 50%;
+  will-change: transform, opacity;
 `;
 
 const Content = styled.div`
@@ -94,7 +95,7 @@ const TextBox = styled.div`
   height: 529px;
   left: 50%;
   transform: translateX(-50%);
-  top: 183px; /* Distance from nav bar */
+  top: 85px; /* Distance from nav bar buttons */
   z-index: 2;
   display: flex;
   flex-direction: column;
@@ -152,6 +153,7 @@ const ScrollingTextContent = styled(motion.div)`
   font-weight: 500;
   color: white;
   padding: 30px 0;
+  will-change: transform;
   animation: scroll 100s linear infinite;
 
   @keyframes scroll {
@@ -164,42 +166,44 @@ const ScrollingTextContent = styled(motion.div)`
   }
 `;
 
+const createStars = () => {
+  const stars = [];
+  for (let i = 0; i < 50; i++) { // Reduced number of stars
+    const size = Math.random() * 2; // Smaller stars
+    const x = Math.random() * 100;
+    const y = Math.random() * 100;
+    const duration = Math.random() * 3 + 3; // Faster animation
+    
+    stars.push(
+      <Star
+        key={i}
+        style={{
+          width: `${size}px`,
+          height: `${size}px`,
+          left: `${x}%`,
+          top: `${y}%`,
+        }}
+        animate={{
+          opacity: [0.5, 1, 0.5],
+        }}
+        transition={{
+          duration: duration,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
+    );
+  }
+  return stars;
+};
+
 const LandingPage: React.FC = () => {
   const navigate = useNavigate();
-
-  const createStars = () => {
-    const stars = [];
-    for (let i = 0; i < 100; i++) {
-      const size = Math.random() * 3;
-      const x = Math.random() * 100;
-      const y = Math.random() * 100;
-      const duration = Math.random() * 5 + 5;
-      
-      stars.push(
-        <Star
-          key={i}
-          style={{
-            width: `${size}px`,
-            height: `${size}px`,
-            left: `${x}%`,
-            top: `${y}%`,
-          }}
-          animate={{
-            opacity: [0.5, 1, 0.5],
-          }}
-          transition={{
-            duration: duration,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-      );
-    }
-    return stars;
-  };
+  const stars = useMemo(() => createStars(), []); // Memoize stars
 
   return (
     <>
+      <GlobalStyle />
       <Header>
         <Title>Cosmonaut</Title>
         <NavButtons>
@@ -221,7 +225,7 @@ const LandingPage: React.FC = () => {
       </Header>
       
       <SpaceBackground>
-        {createStars()}
+        {stars}
       </SpaceBackground>
 
       <Content>
@@ -250,4 +254,4 @@ const LandingPage: React.FC = () => {
   );
 };
 
-export default LandingPage; 
+export default React.memo(LandingPage); // Memoize the entire component 
