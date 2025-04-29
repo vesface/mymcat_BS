@@ -85,12 +85,15 @@ const Content = styled.div`
 
 const WelcomeImage = styled.img`
   position: absolute;
-  width: 617px;
+  width: 607px;  /* Reduced by 10px (5px on each side) */
   height: auto;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
+  object-fit: cover;
+  object-position: center;
+  clip-path: inset(5px);  /* Crop 5px from all sides */
 `;
 
 const TextBox = styled.div`
@@ -125,7 +128,7 @@ const MiddleText = styled.div`
   }
   
   span:nth-child(3) {
-    margin-left: -0.3em;
+    margin-left: -0.2em;
   }
 `;
 
@@ -239,7 +242,7 @@ const LandingPage: React.FC = () => {
           alt="Cosmic Art"
         />
         <TextBox>
-          <TopText>Giving you the</TopText>
+          <TopText>giving you the</TopText>
           <MiddleText>
             <span>S</span>
             <span>P</span>
@@ -251,7 +254,7 @@ const LandingPage: React.FC = () => {
         </TextBox>
         <ScrollingText>
           <ScrollingTextContent>
-            DESIGN + BRANDING + VISUAL IDENTITY + WEB DEVELOPMENT + BRAND STRATEGY • DESIGN + BRANDING + VISUAL IDENTITY + WEB DEVELOPMENT + BRAND STRATEGY • DESIGN + BRANDING + VISUAL IDENTITY + WEB DEVELOPMENT + BRAND STRATEGY
+            DESIGN + BRANDING + VISUAL IDENTITY + WEB DEVELOPMENT + BRAND STRATEGY + DESIGN + BRANDING + VISUAL IDENTITY + WEB DEVELOPMENT + BRAND STRATEGY + DESIGN + BRANDING + VISUAL IDENTITY + WEB DEVELOPMENT + BRAND STRATEGY DESIGN + BRANDING + VISUAL IDENTITY + WEB DEVELOPMENT + BRAND STRATEGY + DESIGN + BRANDING + VISUAL IDENTITY + WEB DEVELOPMENT + BRAND STRATEGY + DESIGN + BRANDING + VISUAL IDENTITY + WEB DEVELOPMENT + BRAND STRATEGY
           </ScrollingTextContent>
         </ScrollingText>
       </Content>
