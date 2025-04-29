@@ -82,8 +82,9 @@ const WelcomeImage = styled.img`
   position: absolute;
   width: 617px;
   height: auto;
-  left: 664px;
-  top: 154px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   z-index: 1;
 `;
 
@@ -140,6 +141,8 @@ const ScrollingText = styled.div`
   overflow: hidden;
   white-space: nowrap;
   z-index: 3;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
 `;
 
 const ScrollingTextContent = styled(motion.div)`
@@ -148,15 +151,15 @@ const ScrollingTextContent = styled(motion.div)`
   font-size: 48px;
   font-weight: 500;
   color: white;
-  padding-top: 26px;
-  animation: scroll 20s linear infinite;
+  padding: 30px 0;
+  animation: scroll 100s linear infinite;
 
   @keyframes scroll {
     0% {
-      transform: translateX(100%);
+      transform: translateX(0);
     }
     100% {
-      transform: translateX(-100%);
+      transform: translateX(-50%);
     }
   }
 `;
@@ -223,7 +226,7 @@ const LandingPage: React.FC = () => {
 
       <Content>
         <WelcomeImage 
-          src="https://media.discordapp.net/attachments/529811097511919639/1366613037431263273/5cb48d1b8dba5ee857fcff3f8179e891.jpg?ex=68119512&is=68104392&hm=2fee3e0aeebd5d64f85a12ef6fcb8e2ba10ca161fdfaf8ccda94e519008044cc&=&format=webp&width=1326&height=1658"
+          src="https://media.discordapp.net/attachments/529811097511919639/1366844148895973487/5cb48d1b8dba5ee857fcff3f8179e891.jpg?ex=68126c4f&is=68111acf&hm=e6a4ae17c30d052506911c94a80cbba55efa090e79839ab545aa1baa8e97b18c&=&format=webp&width=1326&height=1658"
           alt="Cosmic Art"
         />
         <TextBox>
@@ -239,7 +242,7 @@ const LandingPage: React.FC = () => {
         </TextBox>
         <ScrollingText>
           <ScrollingTextContent>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </ScrollingTextContent>
         </ScrollingText>
       </Content>
