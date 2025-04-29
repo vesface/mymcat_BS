@@ -33,6 +33,14 @@ const Title = styled.h1`
   margin: 0;
   color: white;
   padding: 35px 0;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.2);
+  }
 `;
 
 const NavButtons = styled.div`
