@@ -33,6 +33,12 @@ const Title = styled.h1`
   margin: 0;
   color: white;
   padding: 35px 0;
+  cursor: pointer;
+  transition: opacity 0.3s;
+
+  &:hover {
+    opacity: 0.8;
+  }
 `;
 
 const NavButtons = styled.div`
@@ -80,7 +86,7 @@ const VideoContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #000;
+  background: #000000;
 `;
 
 const Video = styled.iframe`
@@ -97,15 +103,8 @@ const WorldsPage: React.FC = () => {
     <>
       <GlobalStyle />
       <Header>
-        <Title>Cosmonaut</Title>
+        <Title onClick={() => navigate('/')}>Cosmonaut</Title>
         <NavButtons>
-          <Button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => navigate('/')}
-          >
-            Home
-          </Button>
           <Button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -123,7 +122,6 @@ const WorldsPage: React.FC = () => {
         </NavButtons>
       </Header>
       <VideoContainer>
-        <PageTitle>Live from NASA</PageTitle>
         <Video
           src="https://www.youtube.com/embed/H999s0P1Er0?si=L1AjRc8ultTBYo1N&autoplay=1&mute=1"
           title="YouTube video player"
