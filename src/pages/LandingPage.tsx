@@ -7,9 +7,6 @@ const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'Nebula';
     src: url('/fonts/Nebula-Regular.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: block;
   }
 `;
 
@@ -97,8 +94,8 @@ const TextBox = styled.div`
   width: 1050px;
   height: 529px;
   left: 50%;
-  transform: translateX(-50%);
-  top: 85px;
+  top: 50%;
+  transform: translate(-50%, -50%);
   z-index: 2;
   display: flex;
   flex-direction: column;
