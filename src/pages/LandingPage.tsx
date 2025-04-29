@@ -161,7 +161,7 @@ const ScrollingTextContent = styled(motion.div)`
   color: white;
   padding: 0.775vw 0;
   will-change: transform;
-  animation: scroll 33.33s linear infinite;
+  animation: scroll 300s linear infinite;
 
   @keyframes scroll {
     0% {
@@ -206,6 +206,8 @@ const createStars = () => {
 
 const LandingPage: React.FC = () => {
   const navigate = useNavigate();
+  const scrollingText = "DESIGN + BRANDING + VISUAL IDENTITY + WEB DEVELOPMENT + BRAND STRATEGY • ";
+  const longScrollingText = scrollingText.repeat(9);
 
   useEffect(() => {
     document.fonts.ready.then(() => {
@@ -254,7 +256,7 @@ const LandingPage: React.FC = () => {
         </TextBox>
         <ScrollingText>
           <ScrollingTextContent>
-            DESIGN + BRANDING + VISUAL IDENTITY + WEB DEVELOPMENT + BRAND STRATEGY + DESIGN + BRANDING + VISUAL IDENTITY + WEB DEVELOPMENT + BRAND STRATEGY + DESIGN + BRANDING + VISUAL IDENTITY + WEB DEVELOPMENT + BRAND STRATEGY DESIGN + BRANDING + VISUAL IDENTITY + WEB DEVELOPMENT + BRAND STRATEGY + DESIGN + BRANDING + VISUAL IDENTITY + WEB DEVELOPMENT + BRAND STRATEGY + DESIGN + BRANDING + VISUAL IDENTITY + WEB DEVELOPMENT + BRAND STRATEGY
+            {longScrollingText}
           </ScrollingTextContent>
         </ScrollingText>
       </Content>
