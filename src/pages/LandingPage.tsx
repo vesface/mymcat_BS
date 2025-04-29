@@ -74,7 +74,8 @@ const Star = styled(motion.div)`
 const Content = styled.div`
   position: relative;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  padding-bottom: 100px; /* Space for the scrolling text */
 `;
 
 const WelcomeImage = styled.img`
@@ -89,9 +90,10 @@ const WelcomeImage = styled.img`
 const TextBox = styled.div`
   position: absolute;
   width: 1050px;
-  height: 572px;
-  left: 448px;
-  top: 268px;
+  height: 529px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 183px; /* Distance from nav bar */
   z-index: 2;
   display: flex;
   flex-direction: column;
@@ -107,7 +109,7 @@ const TopText = styled.div`
 
 const MiddleText = styled.div`
   font-family: 'Nebula', sans-serif;
-  font-size: 150px;
+  font-size: 250px;
   color: white;
   text-align: center;
   letter-spacing: normal;
@@ -117,7 +119,7 @@ const MiddleText = styled.div`
   }
   
   span:nth-child(3) {
-    margin-left: -0.3em; /* Adjusts the kerning between P and A */
+    margin-left: -0.3em;
   }
 `;
 
@@ -126,6 +128,37 @@ const BottomText = styled.div`
   font-size: 18px;
   color: white;
   text-align: right;
+`;
+
+const ScrollingText = styled.div`
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: transparent;
+  overflow: hidden;
+  white-space: nowrap;
+  z-index: 3;
+`;
+
+const ScrollingTextContent = styled(motion.div)`
+  display: inline-block;
+  font-family: 'Helvetica Neue LT Pro', sans-serif;
+  font-size: 48px;
+  font-weight: 500;
+  color: white;
+  padding-top: 26px;
+  animation: scroll 20s linear infinite;
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
 `;
 
 const LandingPage: React.FC = () => {
@@ -204,6 +237,11 @@ const LandingPage: React.FC = () => {
           </MiddleText>
           <BottomText>you need</BottomText>
         </TextBox>
+        <ScrollingText>
+          <ScrollingTextContent>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </ScrollingTextContent>
+        </ScrollingText>
       </Content>
     </>
   );
