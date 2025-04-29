@@ -12,8 +12,9 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: 'Helvetica Neue LT Pro', sans-serif;
-    background: #0a0a2a;
+    background-color: #090011;
     color: white;
+    overflow-x: hidden;
   }
 
   @font-face {
