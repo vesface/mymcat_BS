@@ -34,12 +34,19 @@ const Title = styled.h1`
   color: white;
   padding: 35px 0;
   cursor: pointer;
+  background: #080010;
+  border: 1px solid rgb(255, 255, 255);
+  padding: 10px 45px;
+  border-radius: 25px;
+  font-size: 18px;
+  cursor: none;
+  backdrop-filter: blur(5px);
   transition: 0.3s;
 
   &:hover {
+    background: rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-    background: rgba(255, 255, 255, 0.2);
   }
 `;
 
