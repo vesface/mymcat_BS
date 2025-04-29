@@ -81,7 +81,7 @@ const Content = styled.div`
 
 const WelcomeImage = styled.img`
   position: absolute;
-  width: 617px;
+  width: 32vw; /* 617/1930 ≈ 32% of viewport width */
   height: auto;
   left: 50%;
   top: 50%;
@@ -91,27 +91,28 @@ const WelcomeImage = styled.img`
 
 const TextBox = styled.div`
   position: absolute;
-  width: 1050px;
-  height: 529px;
+  width: 54.4vw; /* 1050/1930 ≈ 54.4% of viewport width */
+  height: 27.4vw; /* Maintain aspect ratio with width */
   left: 50%;
   transform: translateX(-50%);
-  top: 85px; /* Distance from nav bar buttons */
+  top: 85px;
   z-index: 2;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 0 22.8vw; /* 440/1930 ≈ 22.8% of viewport width */
 `;
 
 const TopText = styled.div`
   font-family: 'Helvetica Neue LT Pro', sans-serif;
-  font-size: 18px;
+  font-size: 0.93vw; /* Scaled down proportionally */
   color: white;
   text-align: left;
 `;
 
 const MiddleText = styled.div`
   font-family: 'Nebula', sans-serif;
-  font-size: 250px;
+  font-size: 13vw; /* Scaled down proportionally */
   color: white;
   text-align: center;
   letter-spacing: normal;
@@ -127,7 +128,7 @@ const MiddleText = styled.div`
 
 const BottomText = styled.div`
   font-family: 'Helvetica Neue LT Pro', sans-serif;
-  font-size: 18px;
+  font-size: 0.93vw; /* Scaled down proportionally */
   color: white;
   text-align: right;
 `;
@@ -137,7 +138,7 @@ const ScrollingText = styled.div`
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 100px;
+  height: 5.2vw; /* 100/1930 ≈ 5.2% of viewport width */
   background: transparent;
   overflow: hidden;
   white-space: nowrap;
@@ -149,10 +150,10 @@ const ScrollingText = styled.div`
 const ScrollingTextContent = styled(motion.div)`
   display: inline-block;
   font-family: 'Helvetica Neue LT Pro', sans-serif;
-  font-size: 48px;
+  font-size: 2.5vw; /* 48/1930 ≈ 2.5% of viewport width */
   font-weight: 500;
   color: white;
-  padding: 30px 0;
+  padding: 1.55vw 0; /* 30/1930 ≈ 1.55% of viewport width */
   will-change: transform;
   animation: scroll 100s linear infinite;
 
