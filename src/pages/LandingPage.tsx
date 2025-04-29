@@ -84,16 +84,36 @@ const Star = styled(motion.div)`
 const Content = styled.div`
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: 2rem;
   text-align: center;
   transition: all 0.3s ease;
+  gap: 4rem;
   
   &:hover {
     filter: brightness(1.1);
   }
+`;
+
+const WelcomeImage = styled.img`
+  height: 400px;
+  width: auto;
+  object-fit: contain;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+  }
+`;
+
+const TextContent = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
 `;
 
 const Subtitle = styled.h2`
@@ -170,14 +190,18 @@ const LandingPage: React.FC = () => {
       </SpaceBackground>
 
       <Content>
-        <motion.div
+        <WelcomeImage 
+          src="https://media.discordapp.net/attachments/529811097511919639/1366613037431263273/5cb48d1b8dba5ee857fcff3f8179e891.jpg?ex=68119512&is=68104392&hm=2fee3e0aeebd5d64f85a12ef6fcb8e2ba10ca161fdfaf8ccda94e519008044cc&=&format=webp&width=1326&height=1658"
+          alt="Cosmic Art"
+        />
+        <TextContent
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
           <Title style={{ fontSize: '4rem' }}>Welcome to the Cosmos</Title>
           <Subtitle>Explore the infinite possibilities of your digital universe</Subtitle>
-        </motion.div>
+        </TextContent>
       </Content>
     </>
   );
