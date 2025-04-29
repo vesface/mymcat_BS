@@ -7,7 +7,6 @@ import CustomCursor from './components/CustomCursor';
 
 const AppContainer = styled.div`
   min-height: 100vh;
-  background: linear-gradient(180deg, #0a0a2a 0%, #1a1a3a 100%);
   color: white;
   cursor: none;
 `;
