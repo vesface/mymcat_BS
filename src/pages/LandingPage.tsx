@@ -7,7 +7,7 @@ const Header = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2rem;
+  padding: 35px;
   position: fixed;
   top: 0;
   left: 0;
@@ -30,16 +30,16 @@ const NavButtons = styled.div`
 `;
 
 const Button = styled(motion.button)`
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
   color: white;
-  padding: 35px 1.5rem;
   border-radius: 25px;
-  font-family: 'Helvetica Neue LT Pro', sans-serif;
-  font-size: 24px;
+  font-family: "Helvetica Neue LT Pro", sans-serif;
+  font-size: 18px;
   cursor: none;
   backdrop-filter: blur(5px);
-  transition: all 0.3s ease;
+  transition: 0.3s;
+  border: 1px solid white;
+  padding: 10px 50px;
+  background:#080010;
 
   &:hover {
     background: rgba(255, 255, 255, 0.2);
