@@ -76,7 +76,7 @@ const Content = styled.div`
   position: relative;
   width: 100%;
   min-height: 100vh;
-  padding-bottom: 100px; /* Space for the scrolling text */
+  padding-bottom: 2.6vw; /* Half of previous 5.2vw */
 `;
 
 const WelcomeImage = styled.img`
@@ -138,7 +138,7 @@ const ScrollingText = styled.div`
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 5.2vw; /* 100/1930 ≈ 5.2% of viewport width */
+  height: 2.6vw; /* Half of previous 5.2vw */
   background: transparent;
   overflow: hidden;
   white-space: nowrap;
@@ -150,10 +150,10 @@ const ScrollingText = styled.div`
 const ScrollingTextContent = styled(motion.div)`
   display: inline-block;
   font-family: 'Helvetica Neue LT Pro', sans-serif;
-  font-size: 2.5vw; /* 48/1930 ≈ 2.5% of viewport width */
+  font-size: 1.25vw; /* Half of previous 2.5vw */
   font-weight: 500;
   color: white;
-  padding: 1.55vw 0; /* 30/1930 ≈ 1.55% of viewport width */
+  padding: 0.775vw 0; /* Half of previous 1.55vw */
   will-change: transform;
   animation: scroll 100s linear infinite;
 
@@ -200,7 +200,6 @@ const createStars = () => {
 
 const LandingPage: React.FC = () => {
   const navigate = useNavigate();
-  const stars = useMemo(() => createStars(), []); // Memoize stars
 
   return (
     <>
@@ -224,10 +223,6 @@ const LandingPage: React.FC = () => {
           </Button>
         </NavButtons>
       </Header>
-      
-      <SpaceBackground>
-        {stars}
-      </SpaceBackground>
 
       <Content>
         <WelcomeImage 
@@ -247,7 +242,7 @@ const LandingPage: React.FC = () => {
         </TextBox>
         <ScrollingText>
           <ScrollingTextContent>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            DESIGN + BRANDING + VISUAL IDENTITY + WEB DEVELOPMENT + BRAND STRATEGY • DESIGN + BRANDING + VISUAL IDENTITY + WEB DEVELOPMENT + BRAND STRATEGY
           </ScrollingTextContent>
         </ScrollingText>
       </Content>
@@ -255,4 +250,4 @@ const LandingPage: React.FC = () => {
   );
 };
 
-export default React.memo(LandingPage); // Memoize the entire component 
+export default React.memo(LandingPage); 
