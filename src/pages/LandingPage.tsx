@@ -7,6 +7,7 @@ const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'Nebula';
     src: url('/fonts/Nebula-Regular.otf') format('opentype');
+    font-display: swap;
   }
 `;
 
@@ -81,7 +82,7 @@ const Content = styled.div`
 
 const WelcomeImage = styled.img`
   position: absolute;
-  width: 32vw; /* 617/1930 ≈ 32% of viewport width */
+  width: 617px;
   height: auto;
   left: 50%;
   top: 50%;
@@ -91,8 +92,8 @@ const WelcomeImage = styled.img`
 
 const TextBox = styled.div`
   position: absolute;
-  width: 54.4vw; /* 1050/1930 ≈ 54.4% of viewport width */
-  height: 27.4vw; /* Maintain aspect ratio with width */
+  width: 1050px;
+  height: 529px;
   left: 50%;
   transform: translateX(-50%);
   top: 85px;
@@ -100,19 +101,19 @@ const TextBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 0 22.8vw; /* 440/1930 ≈ 22.8% of viewport width */
+  padding: 0 440px;
 `;
 
 const TopText = styled.div`
   font-family: 'Helvetica Neue LT Pro', sans-serif;
-  font-size: 0.93vw; /* Scaled down proportionally */
+  font-size: 18px;
   color: white;
   text-align: left;
 `;
 
 const MiddleText = styled.div`
   font-family: 'Nebula', sans-serif;
-  font-size: 13vw; /* Scaled down proportionally */
+  font-size: 250px;
   color: white;
   text-align: center;
   letter-spacing: normal;
@@ -128,7 +129,7 @@ const MiddleText = styled.div`
 
 const BottomText = styled.div`
   font-family: 'Helvetica Neue LT Pro', sans-serif;
-  font-size: 0.93vw; /* Scaled down proportionally */
+  font-size: 18px;
   color: white;
   text-align: right;
 `;
@@ -138,7 +139,7 @@ const ScrollingText = styled.div`
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 2.6vw; /* Half of previous 5.2vw */
+  height: 2.6vw;
   background: transparent;
   overflow: hidden;
   white-space: nowrap;
@@ -150,19 +151,19 @@ const ScrollingText = styled.div`
 const ScrollingTextContent = styled(motion.div)`
   display: inline-block;
   font-family: 'Helvetica Neue LT Pro', sans-serif;
-  font-size: 1.25vw; /* Half of previous 2.5vw */
+  font-size: 1.25vw;
   font-weight: 500;
   color: white;
-  padding: 0.775vw 0; /* Half of previous 1.55vw */
+  padding: 0.775vw 0;
   will-change: transform;
-  animation: scroll 100s linear infinite;
+  animation: scroll 33.33s linear infinite;
 
   @keyframes scroll {
     0% {
       transform: translateX(0);
     }
     100% {
-      transform: translateX(-50%);
+      transform: translateX(-100%);
     }
   }
 `;
@@ -242,7 +243,7 @@ const LandingPage: React.FC = () => {
         </TextBox>
         <ScrollingText>
           <ScrollingTextContent>
-            DESIGN + BRANDING + VISUAL IDENTITY + WEB DEVELOPMENT + BRAND STRATEGY • DESIGN + BRANDING + VISUAL IDENTITY + WEB DEVELOPMENT + BRAND STRATEGY
+            DESIGN + BRANDING + VISUAL IDENTITY + WEB DEVELOPMENT + BRAND STRATEGY • DESIGN + BRANDING + VISUAL IDENTITY + WEB DEVELOPMENT + BRAND STRATEGY • DESIGN + BRANDING + VISUAL IDENTITY + WEB DEVELOPMENT + BRAND STRATEGY
           </ScrollingTextContent>
         </ScrollingText>
       </Content>
