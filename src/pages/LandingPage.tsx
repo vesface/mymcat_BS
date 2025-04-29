@@ -13,11 +13,6 @@ const Header = styled.header`
   left: 0;
   right: 0;
   z-index: 10;
-  transition: all 0.3s ease;
-  
-  &:hover {
-    filter: brightness(1.2);
-  }
 `;
 
 const Title = styled.h1`
@@ -27,12 +22,6 @@ const Title = styled.h1`
   background: linear-gradient(45deg, #fff, #a8a8ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  transition: all 0.3s ease;
-  
-  &:hover {
-    filter: brightness(1.2);
-    transform: scale(1.05);
-  }
 `;
 
 const NavButtons = styled.div`
@@ -73,12 +62,6 @@ const Star = styled(motion.div)`
   position: absolute;
   background: white;
   border-radius: 50%;
-  transition: all 0.3s ease;
-  
-  &:hover {
-    transform: scale(1.5);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
-  }
 `;
 
 const Content = styled.div`
@@ -89,24 +72,13 @@ const Content = styled.div`
   align-items: center;
   padding: 2rem;
   text-align: center;
-  transition: all 0.3s ease;
   gap: 4rem;
-  
-  &:hover {
-    filter: brightness(1.1);
-  }
 `;
 
 const WelcomeImage = styled.img`
   height: 400px;
   width: auto;
   object-fit: contain;
-  transition: all 0.3s ease;
-  
-  &:hover {
-    transform: scale(1.05);
-    filter: brightness(1.2);
-  }
 `;
 
 const TextContent = styled(motion.div)`
@@ -121,12 +93,6 @@ const Subtitle = styled.h2`
   font-size: 1.5rem;
   margin-top: 2rem;
   color: rgba(255, 255, 255, 0.8);
-  transition: all 0.3s ease;
-  
-  &:hover {
-    transform: scale(1.05);
-    color: rgba(255, 255, 255, 1);
-  }
 `;
 
 const LandingPage: React.FC = () => {
@@ -166,7 +132,7 @@ const LandingPage: React.FC = () => {
   return (
     <>
       <Header>
-        <Title>Cosmic Journey</Title>
+        <Title>Cosmonaut</Title>
         <NavButtons>
           <Button
             whileHover={{ scale: 1.05 }}
@@ -199,8 +165,9 @@ const LandingPage: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          <Title style={{ fontSize: '4rem' }}>Welcome to the Cosmos</Title>
-          <Subtitle>Explore the infinite possibilities of your digital universe</Subtitle>
+          <Subtitle>giving you the</Subtitle>
+          <Title style={{ fontSize: '4rem' }}>SPACE</Title>
+          <Subtitle>you need</Subtitle>
         </TextContent>
       </Content>
     </>
