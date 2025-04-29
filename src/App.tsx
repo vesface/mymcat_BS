@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import styled from 'styled-components';
-import LandingPage from './pages/LandingPage.tsx';
-import WorldPage from './pages/WorldPage.tsx';
+import LandingPage from './pages/LandingPage';
+import WorldPage from './pages/WorldPage';
 
 const AppContainer = styled.div`
   min-height: 100vh;
