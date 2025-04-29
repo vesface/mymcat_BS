@@ -54,3 +54,34 @@ const NavButtons = styled.div`
   display: flex;
   gap: 1rem;
 `;
+
+const WorldsPage: React.FC = () => {
+  const navigate = useNavigate();
+
+  return (
+    <>
+      <GlobalStyle />
+      <Header>
+        <Title onClick={() => navigate('/')}>Cosmonaut</Title>
+        <NavButtons>
+          <Button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => navigate('/worlds')}
+          >
+            Social
+          </Button>
+          <Button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => navigate('/worlds')}
+          >
+            Worlds
+          </Button>
+        </NavButtons>
+      </Header>
+    </>
+  );
+};
+
+export default WorldsPage;
