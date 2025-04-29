@@ -82,9 +82,10 @@ const VideoContainer = styled.div`
 `;
 
 const Video = styled.iframe`
-  width: 80%;
-  height: 80%;
+  width: 560px;
+  height: 315px;
   border: none;
+  border-radius: 10px;
 `;
 
 const WorldsPage: React.FC = () => {
@@ -108,8 +109,10 @@ const WorldsPage: React.FC = () => {
       <PageTitle>Live from NASA</PageTitle>
       <VideoContainer>
         <Video
-          src="https://www.youtube.com/embed/H999s0P1Er0?autoplay=1&mute=1"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          src="https://www.youtube.com/embed/H999s0P1Er0?si=L1AjRc8ultTBYo1N&autoplay=1&mute=1"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
           allowFullScreen
         />
       </VideoContainer>
