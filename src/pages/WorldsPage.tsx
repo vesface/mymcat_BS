@@ -1,7 +1,18 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import { motion } from 'framer-motion';
+
+const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: 'Nebula';
+    src: local('Nebula'),
+         url('/fonts/Nebula-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+`;
 
 const Header = styled.header`
   display: flex;
@@ -81,6 +92,7 @@ const WorldsPage: React.FC = () => {
 
   return (
     <>
+      <GlobalStyle />
       <Header>
         <Title>Cosmonaut</Title>
         <NavButtons>
