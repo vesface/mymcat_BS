@@ -63,9 +63,11 @@ const PageTitle = styled.h2`
   font-family: 'Helvetica Neue LT Pro', sans-serif;
   font-size: 24px;
   color: white;
-  position: fixed;
-  top: 35px;
-  left: 35px;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  text-align: center;
   z-index: 10;
 `;
 
@@ -104,10 +106,24 @@ const WorldsPage: React.FC = () => {
           >
             Home
           </Button>
+          <Button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => navigate('/worlds')}
+          >
+            Social
+          </Button>
+          <Button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => navigate('/worlds')}
+          >
+            Worlds
+          </Button>
         </NavButtons>
       </Header>
-      <PageTitle>Live from NASA</PageTitle>
       <VideoContainer>
+        <PageTitle>Live from NASA</PageTitle>
         <Video
           src="https://www.youtube.com/embed/H999s0P1Er0?si=L1AjRc8ultTBYo1N&autoplay=1&mute=1"
           title="YouTube video player"
