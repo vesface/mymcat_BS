@@ -222,16 +222,16 @@ const LandingPage: React.FC = () => {
           <Button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => window.open('https://social.example.com', '_blank')}
+            onClick={() => navigate('/worlds')}
           >
             Social
           </Button>
           <Button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => navigate('/world')}
+            onClick={() => navigate('/worlds')}
           >
-            World
+            Worlds
           </Button>
         </NavButtons>
       </Header>

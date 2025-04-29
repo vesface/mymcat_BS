@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import styled from 'styled-components';
 import LandingPage from './pages/LandingPage';
-import WorldPage from './pages/WorldPage';
+import WorldsPage from './pages/WorldsPage';
 import CustomCursor from './components/CustomCursor';
 
 const AppContainer = styled.div`
@@ -21,18 +21,18 @@ const GlowingElement = styled.div`
   }
 `;
 
-function App() {
+const App: React.FC = () => {
   return (
     <Router>
       <AppContainer>
         <CustomCursor />
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/world" element={<WorldPage />} />
+          <Route path="/worlds" element={<WorldsPage />} />
         </Routes>
       </AppContainer>
     </Router>
   );
-}
+};
 
 export default App; 
