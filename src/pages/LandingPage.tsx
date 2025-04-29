@@ -88,7 +88,7 @@ const WelcomeImage = styled.img`
   width: 607px;  /* Reduced by 10px (5px on each side) */
   height: auto;
   left: 48.3%;
-  top: 50%;
+  top: 46%;
   transform: translate(-50%, -50%);
   z-index: 1;
   object-fit: cover;
@@ -101,7 +101,7 @@ const TextBox = styled.div`
   width: 1050px;
   height: 529px;
   left: 50%;
-  top: 47.5%;
+  top: 45%;
   transform: translate(-50%, -50%);
   z-index: 2;
   display: flex;
