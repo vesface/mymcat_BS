@@ -48,6 +48,22 @@ const Button = styled(motion.button)`
   }
 `;
 
+const SpaceBackground = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+`;
+
+const Star = styled(motion.div)`
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+`;
+
 const Content = styled.div`
   position: relative;
   width: 100%;
@@ -99,6 +115,37 @@ const BottomText = styled.div`
 const LandingPage: React.FC = () => {
   const navigate = useNavigate();
 
+  const createStars = () => {
+    const stars = [];
+    for (let i = 0; i < 100; i++) {
+      const size = Math.random() * 3;
+      const x = Math.random() * 100;
+      const y = Math.random() * 100;
+      const duration = Math.random() * 5 + 5;
+      
+      stars.push(
+        <Star
+          key={i}
+          style={{
+            width: `${size}px`,
+            height: `${size}px`,
+            left: `${x}%`,
+            top: `${y}%`,
+          }}
+          animate={{
+            opacity: [0.5, 1, 0.5],
+          }}
+          transition={{
+            duration: duration,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+      );
+    }
+    return stars;
+  };
+
   return (
     <>
       <Header>
@@ -120,6 +167,10 @@ const LandingPage: React.FC = () => {
           </Button>
         </NavButtons>
       </Header>
+      
+      <SpaceBackground>
+        {createStars()}
+      </SpaceBackground>
 
       <Content>
         <WelcomeImage 
