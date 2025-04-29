@@ -86,7 +86,7 @@ const VideoContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #000000;
+  background: #080010;
 `;
 
 const Video = styled.iframe`
