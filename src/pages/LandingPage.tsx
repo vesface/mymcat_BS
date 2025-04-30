@@ -2,7 +2,6 @@ import React, { useMemo, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled, { createGlobalStyle } from 'styled-components';
 import { motion } from 'framer-motion';
-import spaceImage from '../assets/SPACE.png';
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -135,14 +134,12 @@ const MiddleText = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100%;
 `;
 
-const SpaceImage = styled.img`
-  max-width: 100%;
+const SpacePNG = styled.img`
+  width: 1000px;
   height: auto;
-  display: block;
+  object-fit: contain;
 `;
 
 const BottomText = styled.div`
@@ -228,7 +225,7 @@ const LandingPage: React.FC = () => {
         <TextBox>
           <TopText>giving you the</TopText>
           <MiddleText>
-            <SpaceImage src={spaceImage} alt="SPACE" />
+            <SpacePNG src="/SPACE.png" alt="SPACE" />
           </MiddleText>
           <BottomText>you need</BottomText>
         </TextBox>
