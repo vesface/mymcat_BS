@@ -2,7 +2,6 @@ import React, { useMemo, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled, { createGlobalStyle } from 'styled-components';
 import { motion } from 'framer-motion';
-import spaceSVG from '../assets/SPACE.svg';
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -231,7 +230,7 @@ const LandingPage: React.FC = () => {
         <TextBox>
           <TopText>giving you the</TopText>
           <MiddleText>
-            <SpaceSVG src={spaceSVG} alt="SPACE" />
+            <SpaceSVG src="/SPACE.svg" alt="SPACE" />
           </MiddleText>
           <BottomText>you need</BottomText>
         </TextBox>
