@@ -140,6 +140,8 @@ const SpacePNG = styled.img`
   width: 1000px;
   height: auto;
   object-fit: contain;
+  display: block;
+  margin: 0 auto;
 `;
 
 const BottomText = styled.div`
