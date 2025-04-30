@@ -35,7 +35,6 @@ const Title = styled.h1`
   padding: 35px 0;
   cursor: pointer;
   background: #080010;
-  border: 1px solid rgb(255, 255, 255);
   padding: 10px 45px;
   border-radius: 25px;
   font-size: 18px;
