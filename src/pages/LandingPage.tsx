@@ -137,14 +137,15 @@ const MiddleText = styled.div`
   color: white;
   text-align: center;
   letter-spacing: normal;
-  
-  span {
-    display: inline-block;
-  }
-  
-  span:nth-child(3) {
-    margin-left: -0.2em;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const SpaceSVG = styled.img`
+  width: 1000px;
+  height: auto;
+  object-fit: contain;
 `;
 
 const BottomText = styled.div`
@@ -261,11 +262,7 @@ const LandingPage: React.FC = () => {
         <TextBox>
           <TopText>giving you the</TopText>
           <MiddleText>
-            <span>S</span>
-            <span>P</span>
-            <span>A</span>
-            <span>C</span>
-            <span>E</span>
+            <SpaceSVG src="/SPACE.svg" alt="SPACE" />
           </MiddleText>
           <BottomText>you need</BottomText>
         </TextBox>

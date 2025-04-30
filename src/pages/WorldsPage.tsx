@@ -35,7 +35,6 @@ const Title = styled.h1`
   padding: 35px 0;
   cursor: pointer;
   background: #080010;
-  border: 1px solid rgb(255, 255, 255);
   padding: 10px 45px;
   border-radius: 25px;
   font-size: 18px;
@@ -74,12 +73,33 @@ const Button = styled(motion.button)`
   }
 `;
 
+const VideoContainer = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+`;
+
+const Video = styled.video`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;
+
 const WorldsPage: React.FC = () => {
   const navigate = useNavigate();
 
   return (
     <>
       <GlobalStyle />
+      <VideoContainer>
+        <Video autoPlay loop muted playsInline>
+          <source src="/videos/space.mp4" type="video/mp4" />
+        </Video>
+      </VideoContainer>
       <Header>
         <Title onClick={() => navigate('/')}>Cosmonaut</Title>
         <NavButtons>
