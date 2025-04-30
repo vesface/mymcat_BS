@@ -91,6 +91,12 @@ const Video = styled.iframe`
   width: 50vw;
   height: 28.125vw; /* 16:9 aspect ratio */
   border: none;
+  max-width: 800px;
+  max-height: 450px;
+  @media (max-width: 768px) {
+    width: 90vw;
+    height: 50.625vw; /* 16:9 aspect ratio */
+  }
 `;
 
 const WorldsPage: React.FC = () => {
@@ -101,11 +107,12 @@ const WorldsPage: React.FC = () => {
       <GlobalStyle />
       <VideoContainer>
         <Video 
-          src="https://www.youtube.com/embed/H999s0P1Er0?si=gAvCMfpNswAfwpsH&autoplay=1&mute=1&controls=1" 
+          src="https://www.youtube.com/embed/H999s0P1Er0?si=gAvCMfpNswAfwpsH&autoplay=1&mute=1&controls=1&playsinline=1&rel=0" 
           title="YouTube video player" 
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
           referrerPolicy="strict-origin-when-cross-origin" 
           allowFullScreen
+          playsInline
         />
       </VideoContainer>
       <Header>
