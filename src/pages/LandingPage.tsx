@@ -131,11 +131,6 @@ const TopText = styled.div`
 `;
 
 const MiddleText = styled.div`
-  font-family: 'Nebula', sans-serif;
-  font-size: 250px;
-  color: white;
-  text-align: center;
-  letter-spacing: normal;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -145,7 +140,6 @@ const SpaceSVG = styled.img`
   width: 1000px;
   height: auto;
   object-fit: contain;
-  filter: brightness(0) invert(0); /* This will make the SVG black */
 `;
 
 const BottomText = styled.div`
