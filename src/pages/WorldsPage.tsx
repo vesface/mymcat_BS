@@ -101,7 +101,7 @@ const WorldsPage: React.FC = () => {
       <GlobalStyle />
       <VideoContainer>
         <Video 
-          src="https://www.youtube.com/embed/H999s0P1Er0?si=gAvCMfpNswAfwpsH" 
+          src="https://www.youtube.com/embed/H999s0P1Er0?si=gAvCMfpNswAfwpsH&autoplay=1&mute=1&controls=1" 
           title="YouTube video player" 
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
           referrerPolicy="strict-origin-when-cross-origin" 
