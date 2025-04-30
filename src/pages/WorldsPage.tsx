@@ -84,11 +84,12 @@ const VideoContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #080010;
 `;
 
 const Video = styled.iframe`
-  width: 100%;
-  height: 100%;
+  width: 50vw;
+  height: 28.125vw; /* 16:9 aspect ratio */
   border: none;
 `;
 
