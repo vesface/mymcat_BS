@@ -80,10 +80,10 @@ const VideoContainer = styled.div`
   width: 100%;
   height: 100%;
   z-index: -1;
-  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
   background: #080010;
 `;
 
@@ -106,13 +106,12 @@ const WorldsPage: React.FC = () => {
     <>
       <GlobalStyle />
       <VideoContainer>
-        <Video 
+        <Video
           src="https://www.youtube.com/embed/H999s0P1Er0?si=gAvCMfpNswAfwpsH&autoplay=1&mute=1&controls=1&playsinline=1&rel=0" 
           title="YouTube video player" 
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
           referrerPolicy="strict-origin-when-cross-origin" 
           allowFullScreen
-          playsInline
         />
       </VideoContainer>
       <Header>
