@@ -145,6 +145,7 @@ const SpaceSVG = styled.img`
   width: 1000px;
   height: auto;
   object-fit: contain;
+  filter: brightness(0) invert(0); /* This will make the SVG black */
 `;
 
 const BottomText = styled.div`
