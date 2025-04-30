@@ -2,6 +2,7 @@ import React, { useMemo, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled, { createGlobalStyle } from 'styled-components';
 import { motion } from 'framer-motion';
+import spaceImage from '../assets/SPACE.png';
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -136,7 +137,7 @@ const MiddleText = styled.div`
   align-items: center;
 `;
 
-const SpacePNG = styled.img`
+const SpaceImage = styled.img`
   width: 1000px;
   height: auto;
   object-fit: contain;
@@ -225,7 +226,7 @@ const LandingPage: React.FC = () => {
         <TextBox>
           <TopText>giving you the</TopText>
           <MiddleText>
-            <SpacePNG src="/SPACE.png" alt="SPACE" />
+            <SpaceImage src={spaceImage} alt="SPACE" />
           </MiddleText>
           <BottomText>you need</BottomText>
         </TextBox>
