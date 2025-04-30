@@ -136,7 +136,7 @@ const MiddleText = styled.div`
   align-items: center;
 `;
 
-const SpaceSVG = styled.img`
+const SpacePNG = styled.img`
   width: 1000px;
   height: auto;
   object-fit: contain;
@@ -225,7 +225,7 @@ const LandingPage: React.FC = () => {
         <TextBox>
           <TopText>giving you the</TopText>
           <MiddleText>
-            <SpaceSVG src="/SPACE.svg" alt="SPACE" />
+            <SpacePNG src="/SPACE.png" alt="SPACE" />
           </MiddleText>
           <BottomText>you need</BottomText>
         </TextBox>
