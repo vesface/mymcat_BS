@@ -81,12 +81,15 @@ const VideoContainer = styled.div`
   height: 100%;
   z-index: -1;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
-const Video = styled.video`
+const Video = styled.iframe`
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  border: none;
 `;
 
 const WorldsPage: React.FC = () => {
@@ -96,9 +99,13 @@ const WorldsPage: React.FC = () => {
     <>
       <GlobalStyle />
       <VideoContainer>
-        <Video autoPlay loop muted playsInline>
-          <source src="/videos/space.mp4" type="video/mp4" />
-        </Video>
+        <Video 
+          src="https://www.youtube.com/embed/H999s0P1Er0?si=gAvCMfpNswAfwpsH" 
+          title="YouTube video player" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerPolicy="strict-origin-when-cross-origin" 
+          allowFullScreen
+        />
       </VideoContainer>
       <Header>
         <Title onClick={() => navigate('/')}>Cosmonaut</Title>

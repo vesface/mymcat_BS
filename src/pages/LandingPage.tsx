@@ -188,37 +188,6 @@ const ScrollingTextContent = styled(motion.div)`
   }
 `;
 
-const createStars = () => {
-  const stars = [];
-  for (let i = 0; i < 50; i++) { // Reduced number of stars
-    const size = Math.random() * 2; // Smaller stars
-    const x = Math.random() * 100;
-    const y = Math.random() * 100;
-    const duration = Math.random() * 3 + 3; // Faster animation
-    
-    stars.push(
-      <Star
-        key={i}
-        style={{
-          width: `${size}px`,
-          height: `${size}px`,
-          left: `${x}%`,
-          top: `${y}%`,
-        }}
-        animate={{
-          opacity: [0.5, 1, 0.5],
-        }}
-        transition={{
-          duration: duration,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-    );
-  }
-  return stars;
-};
-
 const LandingPage: React.FC = () => {
   const navigate = useNavigate();
   const scrollingText = "DESIGN + BRANDING + VISUAL IDENTITY + WEB DEVELOPMENT + BRAND STRATEGY • ";
