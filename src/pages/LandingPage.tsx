@@ -220,7 +220,7 @@ const LandingPage: React.FC = () => {
 
       <Content>
         <WelcomeImage 
-          src="https://media.discordapp.net/attachments/529811097511919639/1366844148895973487/5cb48d1b8dba5ee857fcff3f8179e891.jpg?ex=68126c4f&is=68111acf&hm=e6a4ae17c30d052506911c94a80cbba55efa090e79839ab545aa1baa8e97b18c&=&format=webp&width=1326&height=1658"
+          src="public/bg.jpg"
           alt="Cosmic Art"
         />
         <TextBox>
