@@ -220,7 +220,7 @@ const LandingPage: React.FC = () => {
 
       <Content>
         <WelcomeImage 
-          src="public/bg.jpg"
+          src="https://raw.githubusercontent.com/vesface/mymcat_BS/refs/heads/main/public/bg.jpg"
           alt="Cosmic Art"
         />
         <TextBox>
